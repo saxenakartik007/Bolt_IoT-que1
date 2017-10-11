@@ -1,0 +1,5 @@
+sudo pip install pyvirtualdisplay
+sudo pip install selenium
+sudo pip install urllib2
+sudo pip install Pillow
+pip install requests
