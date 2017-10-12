@@ -50,10 +50,11 @@ try:
         """//*[@id="ctl00_SPWebPartManager1_g_d6d774b9_498e_4de6_8690_a93e944cbeed_ctl00_gvTrckMailArticleDtls"]/table/tbody/tr[1]/td[1]""")
     trs = browser.find_elements(By.TAG_NAME, "tr")
     tds = trs[1].find_elements(By.TAG_NAME, "td")
-    data["ship date"] = getDate(tds[1].text)
+    data["ship date"] = tds[1].text
+    print getDate(str(tds[6].text))
     if len(str(tds[6])) != 0:
         data["status"] = "Delivered"
-        data["delivery date"] = getDate(tds[6].text)
+        data["delivery date"] = tds[6].text
     else:
         data["status"] = "In-transit"
         data["delivery date"] = "unavailable"
